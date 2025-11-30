@@ -1,0 +1,61 @@
+/* Service Carousel Specific Styles */
+.service-carousel-slide {
+    align-items: center;
+    display: flex;
+    flex: 0 0 28%;
+    /* 3 items visible, 28% width + padding for spacing */
+    height: 100%;
+    justify-content: center;
+    opacity: 0.5;
+    padding: 0 1.5rem;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service-carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.service-slide-content {
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.service-slide-content h3 {
+    display: inline-block;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-list li {
+    align-items: flex-start;
+    display: flex;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.service-list li::before {
+    color: var(--primary);
+    content: '⬢';
+    font-size: 1rem;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .service-carousel-slide {
+        flex: 0 0 85%;
+    }
+}
