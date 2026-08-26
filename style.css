@@ -24,6 +24,14 @@ html {
 
 body {
   background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at center, rgba(139, 0, 0, 0.12) 0%, transparent 80%),
+    linear-gradient(rgba(18, 18, 18, 0.95), rgba(18, 18, 18, 0.95)),
+    url('/assets/images/business-card.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: cover, cover, 600px;
+  background-blend-mode: normal, normal, overlay;
   color: var(--text-light);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -133,7 +141,32 @@ img {
   justify-content: space-between;
 }
 
-.logo {
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  object-fit: cover;
+  object-position: 50% 12%; /* Crop and zoom into the top-center mascot */
+  background-color: var(--black);
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.6);
+  transition: var(--transition);
+  /* Scale the image slightly within the crop to focus on mascot */
+  transform: scale(1.3);
+}
+
+.logo:hover .logo-icon {
+  transform: scale(1.4) rotate(5deg);
+  border-color: var(--primary-hover);
+}
+
+.logo-info {
   display: flex;
   flex-direction: column;
   line-height: 1;
@@ -525,3 +558,146 @@ img {
     width: 10%;
   }
 }
+
+/* --- Reviews Section & Marquee Styles --- */
+.reviews {
+  background-color: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+  /* Fade out edges */
+  mask-image: linear-gradient(to right, transparent, var(--white) 15%, var(--white) 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, var(--white) 15%, var(--white) 85%, transparent);
+}
+
+.reviews-marquee {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollMarquee 40s linear infinite;
+}
+
+.reviews-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Since we double the list, translating exactly -50% creates a perfect loop */
+    transform: translateX(-50%);
+  }
+}
+
+.review-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+  border: 1px solid #333;
+  border-top: 3px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  width: 350px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.review-author {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.review-source {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.source-google {
+  background-color: #ea4335; /* Google Red */
+}
+
+.source-facebook {
+  background-color: #1877f2; /* Facebook Blue */
+}
+
+.review-stars {
+  color: #ffb400; /* Gold */
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Review buttons */
+.reviews-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.btn-icon {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.google-btn:hover {
+  background-color: #ea4335;
+  border-color: #ea4335;
+  color: var(--white);
+}
+
+.facebook-btn:hover {
+  background-color: #1877f2;
+  border-color: #1877f2;
+  color: var(--white);
+}

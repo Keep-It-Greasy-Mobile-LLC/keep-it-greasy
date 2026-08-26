@@ -1,3 +1,5 @@
+import galleryImages from './gallery-images.json';
+
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', () => {
   const mobileBtn = document.querySelector('.mobile-menu-btn');
@@ -458,17 +460,99 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Gallery Data & Events ---
-  const galleryItems = document.querySelectorAll('.gallery-item img');
-  const galleryData = Array.from(galleryItems).map(img => ({
-    type: 'image',
-    src: img.src,
-    alt: img.alt
-  }));
+  const galleryGrid = document.getElementById('gallery-grid');
+  if (galleryGrid) {
+    galleryGrid.innerHTML = galleryImages.map((img, index) => `
+      <div class="gallery-item" data-index="${index}">
+        <img src="${img.src}" alt="${img.alt}" loading="lazy">
+      </div>
+    `).join('');
 
-  galleryItems.forEach((img, index) => {
-    img.parentElement.addEventListener('click', (e) => {
-      openModal(index, galleryData, img.parentElement);
+    const galleryData = galleryImages.map(img => ({
+      type: 'image',
+      src: img.src,
+      alt: img.alt
+    }));
+
+    const galleryItems = galleryGrid.querySelectorAll('.gallery-item');
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', (e) => {
+        openModal(index, galleryData, item);
+      });
     });
-  });
+  }
+
+  // --- Reviews Reel ---
+  const reviewsData = [
+    {
+      name: "John D.",
+      source: "google",
+      text: "Terrence is the real deal! He came out to Gray Court on a Sunday to replace my alternator. Super fast, honest pricing, and got me back on the road in no time.",
+      stars: 5
+    },
+    {
+      name: "Marcus T.",
+      source: "facebook",
+      text: "Best mobile mechanic in the Greenville area. He was transparent about the parts needed and didn't try to upsell me. Very reliable.",
+      stars: 5
+    },
+    {
+      name: "Sarah M.",
+      source: "google",
+      text: "Highly recommend Keep It Greasy. Did my front brakes and rotors in my office parking lot while I was at work. Incredibly convenient and professional.",
+      stars: 5
+    },
+    {
+      name: "Amanda R.",
+      source: "facebook",
+      text: "We use Keep It Greasy for our small commercial fleet maintenance. Having someone come directly to our shop saves us so much downtime.",
+      stars: 5
+    },
+    {
+      name: "Dave L.",
+      source: "google",
+      text: "Diagnosed a weird electrical issue that another shop couldn't find. Honest guy, reasonable rates, and extremely knowledgeable.",
+      stars: 5
+    },
+    {
+      name: "Jessica K.",
+      source: "facebook",
+      text: "Fast response and excellent work on my AC recharge. Fair prices and very polite.",
+      stars: 5
+    }
+  ];
+
+  const marqueeTrack = document.getElementById('reviews-marquee-track');
+  if (marqueeTrack) {
+    // Generate star HTML
+    const getStarsHtml = (stars) => {
+      return Array(stars).fill('<span class="star">★</span>').join('');
+    };
+
+    // Build the markup for reviews
+    const buildReviewCard = (review) => {
+      const sourceIcon = review.source === 'google' ? 'G' : 'f';
+      const sourceClass = review.source === 'google' ? 'source-google' : 'source-facebook';
+      return `
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-author">${review.name}</span>
+            <span class="review-source ${sourceClass}" aria-label="Reviewed on ${review.source}">${sourceIcon}</span>
+          </div>
+          <div class="review-stars">${getStarsHtml(review.stars)}</div>
+          <p class="review-text">"${review.text}"</p>
+        </div>
+      `;
+    };
+
+    // Render original + duplicated set for seamless looping
+    const renderReviews = () => {
+      const cardsHtml = reviewsData.map(buildReviewCard).join('');
+      // Double the items to make the track long enough for infinite scrolling animation
+      marqueeTrack.innerHTML = cardsHtml + cardsHtml;
+    };
+
+    renderReviews();
+  }
 
 });
