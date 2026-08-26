@@ -12,16 +12,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-CJiuoHH7.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BMhUqEd1.css">
+  <script type="module" crossorigin src="/assets/index-kkHyp_Fe.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BopD5wik.css">
 </head>
 
 <body>
   <header class="header">
     <div class="container header-container">
       <a href="#" class="logo">
-        <span class="logo-text">KEEP IT <span class="text-primary">GREASY</span></span>
-        <span class="logo-sub">MOBILE LLC</span>
+        <div class="logo-wrap">
+          <img src="/assets/images/business-card.png" alt="Keep It Greasy Mascot" class="logo-icon">
+          <div class="logo-info">
+            <span class="logo-text">KEEP IT <span class="text-primary">GREASY</span></span>
+            <span class="logo-sub">MOBILE LLC</span>
+          </div>
+        </div>
       </a>
       <button class="mobile-menu-btn" aria-label="Toggle Menu">
         <span class="bar"></span>
@@ -33,7 +38,9 @@
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#work" class="nav-link">Our Work</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
           <li><a href="#tiktok" class="nav-link">TikTok</a></li>
+          <li><a href="https://www.facebook.com/61580654383528/" target="_blank" class="nav-link">Facebook</a></li>
           <li><a href="#contact" class="nav-link btn btn-primary">Contact Us</a></li>
         </ul>
       </nav>
@@ -100,12 +107,27 @@
     <section id="work" class="section work">
       <div class="container">
         <h2 class="section-title">RECENT <span class="text-primary">WORK</span></h2>
-        <div class="gallery-grid">
-          <div class="gallery-item"><img src="/assets/images/work-1.jpg" alt="Work Sample 1" loading="lazy"></div>
-          <div class="gallery-item"><img src="/assets/images/work-2.jpg" alt="Work Sample 2" loading="lazy"></div>
-          <div class="gallery-item"><img src="/assets/images/work-3.png" alt="Work Sample 3" loading="lazy"></div>
-          <div class="gallery-item"><img src="/assets/images/work-4.jpg" alt="Work Sample 4" loading="lazy"></div>
-          <div class="gallery-item"><img src="/assets/images/work-5.jpg" alt="Work Sample 5" loading="lazy"></div>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Dynamic Google Photos items will render here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section reviews">
+      <div class="container">
+        <h2 class="section-title">WHAT OUR <span class="text-primary">CUSTOMERS SAY</span></h2>
+        <div class="reviews-marquee-wrapper">
+          <div class="reviews-marquee" id="reviews-marquee-track">
+            <!-- Reviews dynamically populated via JS -->
+          </div>
+        </div>
+        <div class="reviews-actions text-center mt-2">
+          <a href="https://www.google.com/search?q=Keep+It+Greasy+Mobile+LLC+reviews" target="_blank" class="btn btn-outline review-btn google-btn">
+            <span class="btn-icon">G</span> Review us on Google
+          </a>
+          <a href="https://www.facebook.com/61580654383528/reviews/" target="_blank" class="btn btn-outline review-btn facebook-btn">
+            <span class="btn-icon">f</span> Review us on Facebook
+          </a>
         </div>
       </div>
     </section>
