@@ -56,7 +56,10 @@
         <h1 class="hero-title">WE BRING THE SHOP <br><span class="text-primary">TO YOU</span></h1>
         <p class="hero-subtitle">Expert Mobile Mechanic Services in Gray Court & Surrounding Areas.</p>
         <div class="hero-actions">
-          <a href="tel:8646961918" class="btn btn-primary btn-lg">CALL 864-696-1918</a>
+          <a href="tel:8646961918" class="btn btn-primary btn-lg hero-call-btn">
+            <span class="desktop-only">CALL 864-696-1918</span>
+            <span class="mobile-only">🚨 EMERGENCY ROADSIDE / CALL NOW</span>
+          </a>
           <a href="#services" class="btn btn-outline btn-lg">VIEW SERVICES</a>
         </div>
       </div>
@@ -197,6 +200,18 @@
       </div>
     </div>
   </div>
+
+  <!-- Mobile Floating Emergency Call Action Bar -->
+  <aside class="mobile-emergency-bar" aria-label="Emergency Roadside Action">
+    <a href="tel:8646961918" class="emergency-call-btn">
+      <span class="emergency-siren">🚨</span>
+      <div class="emergency-call-text">
+        <span class="emergency-title">EMERGENCY ROADSIDE?</span>
+        <span class="emergency-sub">TAP TO CALL (864) 696-1918</span>
+      </div>
+      <span class="emergency-arrow">➔</span>
+    </a>
+  </aside>
 
   <script type="module" src="/src/main.js"></script>
 </body>

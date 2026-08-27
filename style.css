@@ -702,4 +702,119 @@ img {
   background-color: #1877f2;
   border-color: #1877f2;
   color: var(--white);
+}
+
+/* --- Responsive Emergency Call Action --- */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: inline;
+}
+
+.mobile-emergency-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: inline;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  /* Add space at bottom of page so sticky bar doesn't overlap footer */
+  body {
+    padding-bottom: 85px;
+  }
+
+  .hero-call-btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    animation: pulseGlow 2.5s infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(112, 200, 38, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 22px rgba(112, 200, 38, 0.85);
+    }
+  }
+
+  .mobile-emergency-bar {
+    align-items: center;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 2px solid var(--primary);
+    bottom: 0;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.8);
+    display: block;
+    left: 0;
+    padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    position: fixed;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .emergency-call-btn {
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(112, 200, 38, 0.4);
+    color: #000000;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: space-between;
+    padding: 0.75rem 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .emergency-call-btn:active {
+    transform: scale(0.98);
+  }
+
+  .emergency-siren {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .emergency-call-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    line-height: 1.15;
+    text-align: left;
+  }
+
+  .emergency-title {
+    color: #000000;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .emergency-sub {
+    color: #1a1a1a;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .emergency-arrow {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+  }
 }
