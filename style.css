@@ -149,23 +149,32 @@ img {
   gap: 0.8rem;
 }
 
-.logo-icon {
-  width: 48px;
-  height: 48px;
+.logo-icon-wrap {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   border: 2px solid var(--primary);
-  object-fit: cover;
-  object-position: 50% 12%; /* Crop and zoom into the top-center mascot */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--black);
-  box-shadow: 0 0 12px rgba(112, 200, 38, 0.6);
+  box-shadow: 0 0 10px rgba(112, 200, 38, 0.5);
+  flex-shrink: 0;
   transition: var(--transition);
-  /* Scale the image slightly within the crop to focus on mascot */
-  transform: scale(1.3);
 }
 
-.logo:hover .logo-icon {
-  transform: scale(1.4) rotate(5deg);
+.logo:hover .logo-icon-wrap {
+  transform: rotate(6deg) scale(1.05);
   border-color: var(--primary-hover);
+}
+
+.logo-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 8%; /* Centers tightly on the top mascot character */
+  transform: scale(1.65);
 }
 
 .logo-info {
@@ -729,24 +738,6 @@ img {
   /* Add space at bottom of page so sticky bar doesn't overlap footer */
   body {
     padding-bottom: 85px;
-  }
-
-  .hero-call-btn {
-    width: 100%;
-    text-align: center;
-    padding: 1rem 1.2rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-    animation: pulseGlow 2.5s infinite;
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% {
-      box-shadow: 0 0 10px rgba(112, 200, 38, 0.4);
-    }
-    50% {
-      box-shadow: 0 0 22px rgba(112, 200, 38, 0.85);
-    }
   }
 
   .mobile-emergency-bar {
