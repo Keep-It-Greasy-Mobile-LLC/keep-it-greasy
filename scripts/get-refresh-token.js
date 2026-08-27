@@ -3,7 +3,7 @@ import { exec } from 'child_process';
 
 const PORT = 3000;
 const REDIRECT_URI = `http://localhost:${PORT}/oauth2callback`;
-const SCOPE = 'https://www.googleapis.com/auth/photoslibrary.readonly';
+const SCOPE = 'https://www.googleapis.com/auth/photoslibrary';
 
 const CLIENT_ID = process.argv[2];
 const CLIENT_SECRET = process.argv[3];
