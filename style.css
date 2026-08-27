@@ -150,8 +150,8 @@ img {
 }
 
 .logo-icon-wrap {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 2px solid var(--primary);
   overflow: hidden;
@@ -165,7 +165,7 @@ img {
 }
 
 .logo:hover .logo-icon-wrap {
-  transform: rotate(6deg) scale(1.05);
+  transform: rotate(6deg) scale(1.08);
   border-color: var(--primary-hover);
 }
 
@@ -173,8 +173,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 8%; /* Centers tightly on the top mascot character */
-  transform: scale(1.65);
+  object-position: center;
 }
 
 .logo-info {
