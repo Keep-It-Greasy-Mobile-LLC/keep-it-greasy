@@ -1,22 +1,26 @@
 [
   {
-    "src": "/assets/images/work-1.jpg",
-    "alt": "Work Sample 1"
+    "src": "/assets/images/gallery/Keep It Greasy.PNG",
+    "alt": "Keep It Greasy Work Sample 1"
   },
   {
-    "src": "/assets/images/work-2.jpg",
-    "alt": "Work Sample 2"
+    "src": "/assets/images/gallery/work-1.jpg",
+    "alt": "Keep It Greasy Work Sample 2"
   },
   {
-    "src": "/assets/images/work-3.png",
-    "alt": "Work Sample 3"
+    "src": "/assets/images/gallery/work-2.jpg",
+    "alt": "Keep It Greasy Work Sample 3"
   },
   {
-    "src": "/assets/images/work-4.jpg",
-    "alt": "Work Sample 4"
+    "src": "/assets/images/gallery/work-3.png",
+    "alt": "Keep It Greasy Work Sample 4"
   },
   {
-    "src": "/assets/images/work-5.jpg",
-    "alt": "Work Sample 5"
+    "src": "/assets/images/gallery/work-4.jpg",
+    "alt": "Keep It Greasy Work Sample 5"
+  },
+  {
+    "src": "/assets/images/gallery/work-5.jpg",
+    "alt": "Keep It Greasy Work Sample 6"
   }
 ]
