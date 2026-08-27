@@ -22,9 +22,7 @@ try:
     gdown.download_folder(
         url=folder_url,
         output=output_dir,
-        quiet=False,
-        use_cookies=False,
-        remaining_ok=True
+        quiet=False
     )
     print("Google Drive sync finished successfully.")
 except Exception as e:
